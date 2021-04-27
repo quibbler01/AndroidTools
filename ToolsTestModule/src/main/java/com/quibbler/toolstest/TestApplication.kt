@@ -7,7 +7,7 @@ class TestApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AndroidTools.init(this)
+        //AndroidTools.init(this)
     }
 
 }
