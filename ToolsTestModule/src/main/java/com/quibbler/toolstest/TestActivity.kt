@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quibbler.toolstest.test.InitTest
 import com.quibbler.toolstest.test.PackageUtilTest
+import com.quibbler.toolstest.test.ResUtilTest
 
 class TestActivity : AppCompatActivity() {
 
@@ -12,6 +13,9 @@ class TestActivity : AppCompatActivity() {
         setContentView(R.layout.activity_test)
 
         InitTest().test()
+
+        ResUtilTest.test(this)
+
         PackageUtilTest().test()
     }
 
