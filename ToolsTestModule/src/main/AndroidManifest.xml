@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTools">
-        <activity android:name="com.quibbler.toolstest.TestActivity">
+        <activity
+            android:name="com.quibbler.toolstest.TestActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
