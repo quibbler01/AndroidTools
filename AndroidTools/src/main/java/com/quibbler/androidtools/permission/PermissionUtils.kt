@@ -1,7 +1,8 @@
-package com.quibbler.androidtools
+package com.quibbler.androidtools.permission
 
 import android.content.pm.PackageManager
 import android.os.Build
+import com.quibbler.androidtools.AndroidTools
 
 fun checkPermission(vararg permissions: String): Boolean {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

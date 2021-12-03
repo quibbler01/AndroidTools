@@ -1,8 +1,9 @@
-package com.quibbler.androidtools
+package com.quibbler.androidtools.network
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import com.quibbler.androidtools.AndroidTools
 
 /**
  * To determine whether the current mobile phone has an available network,
