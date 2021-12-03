@@ -21,31 +21,67 @@ fun getResIdByName(resName: String, type: String, pkgName: String = AndroidTools
     return id
 }
 
+/**
+ *
+ * @param resName String
+ * @param type String
+ * @return Int
+ */
 fun getResIdByName(resName: String, type: String): Int {
     val pkgName = AndroidTools.getContext().packageName
     return getResIdByName(resName, type, pkgName)
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getDrawableResIdByName(resName: String): Int {
     return getResIdByName(resName, "drawable")
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getStringResIdByName(resName: String): Int {
     return getResIdByName(resName, "string")
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getLayoutResIdByName(resName: String): Int {
     return getResIdByName(resName, "layout")
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getColorResIdByName(resName: String): Int {
     return getResIdByName(resName, "color")
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getDimenResIdByName(resName: String): Int {
     return getResIdByName(resName, "dimens")
 }
 
+/**
+ *
+ * @param resName String
+ * @return Int
+ */
 fun getThemeResIdByName(resName: String): Int {
     return getResIdByName(resName, "themes")
 }

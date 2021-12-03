@@ -2,7 +2,7 @@ package com.quibbler.toolstest.test
 
 import android.util.Log
 import com.quibbler.androidtools.AndroidTools.TAG
-import com.quibbler.androidtools.PackageUtil
+import com.quibbler.androidtools.packages.PackageUtil
 
 class PackageUtilTest {
 

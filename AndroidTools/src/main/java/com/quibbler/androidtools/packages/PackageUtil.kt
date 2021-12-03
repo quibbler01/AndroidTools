@@ -1,8 +1,9 @@
-package com.quibbler.androidtools
+package com.quibbler.androidtools.packages
 
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager.NameNotFoundException
 import android.text.TextUtils
+import com.quibbler.androidtools.AndroidTools
 import org.jetbrains.annotations.Nullable
 
 object PackageUtil {
