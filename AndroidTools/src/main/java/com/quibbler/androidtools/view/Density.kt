@@ -40,6 +40,10 @@ fun getPhysicsDisplayMetrics(context: Context): DisplayMetrics {
     return displayMetrics
 }
 
+fun getDensity(context: Context): Float {
+    return getPhysicsDisplayMetrics(context).density
+}
+
 /**
  *
  * @param context Context Interface to global information about an application environment.
