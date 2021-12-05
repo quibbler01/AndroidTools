@@ -23,10 +23,10 @@ fun isNetworkAvailable(): Boolean {
  * Get the type information of the current network connection
  */
 fun getConnectedType(): Int {
-    val mConnectivityManager: ConnectivityManager = AndroidTools.getContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    val mNetworkInfo: NetworkInfo? = mConnectivityManager.getActiveNetworkInfo()
-    if (mNetworkInfo != null && mNetworkInfo.isAvailable()) {
-        return mNetworkInfo.getType();
+    val connectivityManager: ConnectivityManager = AndroidTools.getContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkInfo: NetworkInfo? = connectivityManager.getActiveNetworkInfo()
+    if (networkInfo != null && networkInfo.isAvailable()) {
+        return networkInfo.getType();
     }
     return -1;
 }
