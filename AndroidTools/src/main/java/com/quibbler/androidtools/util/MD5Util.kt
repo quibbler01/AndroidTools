@@ -6,11 +6,19 @@ import java.lang.StringBuilder
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
+/**
+ *
+ */
 private val HEX_DIGITS = charArrayOf(
     '0', '1', '2', '3', '4', '5',
     '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
 )
 
+/**
+ *
+ * @param s String?
+ * @return String?
+ */
 fun encodeStr2MD5(s: String?): String? {
     if (s == null || s.isEmpty()) return null
     try {
@@ -24,6 +32,11 @@ fun encodeStr2MD5(s: String?): String? {
     return s
 }
 
+/**
+ *
+ * @param b ByteArray
+ * @return String
+ */
 private fun toHexString(b: ByteArray): String {
     val sb = StringBuilder(b.size * 2)
     for (i in b.indices) {
