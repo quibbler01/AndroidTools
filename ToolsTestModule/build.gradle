@@ -7,9 +7,17 @@ android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
+    viewBinding {
+        enabled = true
+    }
+
+    /*buildFeatures {
+        dataBinding true
+    }*/
+
     defaultConfig {
         applicationId "com.quibbler.androidtools"
-        minSdkVersion 22
+        minSdkVersion 23
         targetSdkVersion 31
         versionCode 1001
         versionName "1.0.0.1"
@@ -23,13 +31,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
