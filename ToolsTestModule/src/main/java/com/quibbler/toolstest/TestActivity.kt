@@ -2,7 +2,9 @@ package com.quibbler.toolstest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.quibbler.androidtools.packages.settings.isNotificationsEnabled
 import com.quibbler.androidtools.packages.settings.openAppDetails
+import com.quibbler.androidtools.packages.settings.openAppNotification
 import com.quibbler.androidtools.packages.settings.openInstalledAppDetails
 import com.quibbler.toolstest.databinding.ActivityTestBinding
 import com.quibbler.toolstest.test.InitTest
@@ -31,6 +33,15 @@ class TestActivity : AppCompatActivity() {
         testBinding.settingsOther.setOnClickListener {
             openInstalledAppDetails(this, "com.tencent.mm")
         }
+
+        testBinding.notification.setOnClickListener {
+            openAppNotification(this)
+        }
+        testBinding.notificationOther.setOnClickListener {
+            openAppNotification(this, "com.tencent.mm")
+        }
+        testBinding.notificationEnable.text = "Notification: ${isNotificationsEnabled(this)}"
+
     }
 
 }

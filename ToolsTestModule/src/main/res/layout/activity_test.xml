@@ -19,16 +19,40 @@
 
         <Button
             android:id="@+id/settings"
-            android:text="Settings"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Settings" />
 
         <Button
             android:id="@+id/settings_other"
-            android:text="SettingsOfWeChat"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="SettingsOfWeChat" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification" />
+
+        <Button
+            android:id="@+id/notification_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NotificationOfWeChat" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/notification_enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
