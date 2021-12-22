@@ -1,6 +1,7 @@
 package com.quibbler.androidtools.view
 
 import android.content.Context
+import android.content.res.Resources
 import android.util.DisplayMetrics
 import android.view.WindowManager
 
@@ -26,6 +27,28 @@ fun dip2px(context: Context, dpValue: Float): Int {
 fun px2dip(context: Context, pxValue: Float): Int {
     val scale: Float = context.resources.displayMetrics.density
     return (pxValue / scale + 0.5f).toInt()
+}
+
+/**
+ * value of sp to px.
+ *
+ * @param spValue Float
+ * @return Int value in px
+ */
+fun sp2px(spValue: Float): Int {
+    val fontScale: Float = Resources.getSystem().displayMetrics.scaledDensity
+    return (spValue * fontScale + 0.5f).toInt()
+}
+
+/**
+ * value of px to sp.
+ *
+ * @param pxValue Float
+ * @return Int value in sp
+ */
+fun px2sp(pxValue: Float): Int {
+    val fontScale = Resources.getSystem().displayMetrics.scaledDensity
+    return (pxValue / fontScale + 0.5f).toInt()
 }
 
 /**
