@@ -1,37 +1,46 @@
-package com.quibbler.androidtools.util;
+package com.quibbler.androidtools.util
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
+import android.app.Activity
+import android.content.Context
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 
-public final class KeyboardUtils {
+object KeyboardUtils {
 
-    private KeyboardUtils() {
+    /**
+     * hide input method
+     *
+     * @param activity Activity
+     */
+    fun hideSoftInput(activity: Activity) {
+        var view = activity.currentFocus ?: View(activity)
+        val imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    public static void hideSoftInput(Activity activity) {
-        View view = activity.getCurrentFocus();
-        if (view == null) view = new View(activity);
-        InputMethodManager imm = (InputMethodManager) activity
-                .getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    /**
+     * trigger input method for this EditText
+     *
+     * @param edit EditText
+     * @param context Context
+     */
+    fun showSoftInput(edit: EditText, context: Context) {
+        edit.isFocusable = true
+        edit.isFocusableInTouchMode = true
+        edit.requestFocus()
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(edit, 0)
     }
 
-    public static void showSoftInput(EditText edit, Context context) {
-        edit.setFocusable(true);
-        edit.setFocusableInTouchMode(true);
-        edit.requestFocus();
-        InputMethodManager imm = (InputMethodManager) context
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(edit, 0);
-    }
-
-    public static void toggleSoftInput(Context context) {
-        InputMethodManager imm = (InputMethodManager) context
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    /**
+     * trigger input method
+     *
+     * @param context Context
+     */
+    fun toggleSoftInput(context: Context) {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
     }
 
 }
