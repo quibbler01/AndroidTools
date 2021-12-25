@@ -1,30 +1,30 @@
-package com.quibbler.androidtools.framework;
+package com.quibbler.androidtools.framework
 
-import android.os.Looper;
-import android.os.MessageQueue;
+import android.annotation.SuppressLint
+import android.os.Looper
+import android.os.MessageQueue
+import java.lang.Exception
 
-import java.lang.reflect.Method;
+@Deprecated("Never use SyncBarrier in your app.")
+object SyncBarrierUtil {
 
-@Deprecated
-public class SyncBarrierUtil {
-
-    public static int postSyncBarrier() {
-        int token = -1;
+    @SuppressLint("DiscouragedPrivateApi")
+    fun postSyncBarrier(): Int {
+        var token = -1
         try {
-            Method method = MessageQueue.class.getDeclaredMethod("postSyncBarrier");
-            token = (int) method.invoke(Looper.getMainLooper().getQueue());
-        } catch (Exception ignore) {
-
+            val method = MessageQueue::class.java.getDeclaredMethod("postSyncBarrier")
+            token = method.invoke(Looper.getMainLooper().queue) as Int
+        } catch (ignore: Exception) {
         }
-        return token;
+        return token
     }
 
-    public static void removeSyncBarrier(int token) {
+    @SuppressLint("DiscouragedPrivateApi")
+    fun removeSyncBarrier(token: Int) {
         try {
-            Method method = MessageQueue.class.getDeclaredMethod("removeSyncBarrier", int.class);
-            method.invoke(Looper.getMainLooper().getQueue(), token);
-        } catch (Exception ignore) {
-
+            val method = MessageQueue::class.java.getDeclaredMethod("removeSyncBarrier", Int::class.javaPrimitiveType)
+            method.invoke(Looper.getMainLooper().queue, token)
+        } catch (ignore: Exception) {
         }
     }
 
