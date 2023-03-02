@@ -4,14 +4,13 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager.NameNotFoundException
 import android.text.TextUtils
 import com.quibbler.androidtools.AndroidTools
-import org.jetbrains.annotations.Nullable
 
 object PackageUtil {
 
     /**
      * Determine whether the application is installed based on the package name
      */
-    fun isAppInstalled(@Nullable packageName: String): Boolean {
+    fun isAppInstalled(packageName: String): Boolean {
         //package name should not be empty
         if (TextUtils.isEmpty(packageName)) {
             return false

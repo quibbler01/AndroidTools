@@ -13,11 +13,8 @@ import com.quibbler.androidtools.AndroidTools
 fun isNetworkAvailable(): Boolean {
     val connectivityManager: ConnectivityManager = AndroidTools.getContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val network: NetworkInfo? = connectivityManager.activeNetworkInfo
-    return if (network != null) {
-        network.isConnected
-    } else false
+    return network?.isConnected ?: false
 }
-
 
 /**
  * Get the type information of the current network connection
