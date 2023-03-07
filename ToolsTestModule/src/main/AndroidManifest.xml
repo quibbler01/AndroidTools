@@ -11,13 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTools">
         <activity
-            android:name="com.quibbler.toolstest.TestActivity"
+            android:name="com.quibbler.toolstest.ui.TestSystemPropertiesUtilsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.quibbler.toolstest.TestActivity"
+            android:exported="true">
+
         </activity>
     </application>
 
