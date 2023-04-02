@@ -33,10 +33,10 @@ object AndroidTools {
      * the developer can use this method to initialize the tool library
      */
     fun init(context: Context?) {
-        if (context is Context) {
-            application = context.applicationContext as Application
-        } else if (context is Application) {
+        if (context is Application) {
             application = context
+        } else if (context is Context) {
+            application = context.applicationContext as Application
         }
     }
 
