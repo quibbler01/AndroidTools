@@ -7,7 +7,7 @@ import com.quibbler.androidtools.AndroidTools
 fun checkPermission(vararg permissions: String): Boolean {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         for (permission in permissions) {
-            if (AndroidTools.getContext().checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
+            if (AndroidTools.getContext().checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
                 return false
             }
         }
