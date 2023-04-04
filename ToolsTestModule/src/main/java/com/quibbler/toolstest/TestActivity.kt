@@ -1,11 +1,10 @@
 package com.quibbler.toolstest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.quibbler.androidtools.packages.settings.isNotificationsEnabled
-import com.quibbler.androidtools.packages.settings.openAppDetails
-import com.quibbler.androidtools.packages.settings.openAppNotification
-import com.quibbler.androidtools.packages.settings.openInstalledAppDetails
+import android.view.View
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import com.quibbler.androidtools.packages.settings.*
 import com.quibbler.toolstest.databinding.ActivityTestBinding
 import com.quibbler.toolstest.test.InitTest
 import com.quibbler.toolstest.test.PackageUtilTest
@@ -28,19 +27,23 @@ class TestActivity : AppCompatActivity() {
         PackageUtilTest().test()
 
         testBinding.settings.setOnClickListener {
-            openAppDetails(this)
+            openThisAppDetails(this)
         }
         testBinding.settingsOther.setOnClickListener {
-            openInstalledAppDetails(this, "com.tencent.mm")
+            openInstalledAppDetailsByName(this, "com.tencent.mm")
         }
 
         testBinding.notification.setOnClickListener {
-            openAppNotification(this)
+            openThisAppNotification(this)
         }
         testBinding.notificationOther.setOnClickListener {
             openAppNotification(this, "com.tencent.mm")
         }
         testBinding.notificationEnable.text = "Notification: ${isNotificationsEnabled(this)}"
+
+
+
+        window.attributes.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
 
     }
 
