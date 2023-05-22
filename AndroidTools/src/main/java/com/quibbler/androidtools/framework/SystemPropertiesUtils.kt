@@ -1,9 +1,10 @@
 package com.quibbler.androidtools.framework
 
-import android.util.Log
+import android.annotation.SuppressLint
 
 const val SystemPropertiesClassName = "android.os.SystemProperties"
 
+@SuppressLint("PrivateApi")
 fun getProperty(name: String, defaultValue: String = ""): String {
     try {
         val clazz = Class.forName(SystemPropertiesClassName)
@@ -14,6 +15,7 @@ fun getProperty(name: String, defaultValue: String = ""): String {
     return defaultValue
 }
 
+@SuppressLint("PrivateApi")
 fun getProperty(name: String, defaultValue: Int = -1): Int {
     try {
         val clazz = Class.forName(SystemPropertiesClassName)
@@ -24,6 +26,7 @@ fun getProperty(name: String, defaultValue: Int = -1): Int {
     return defaultValue
 }
 
+@SuppressLint("PrivateApi")
 fun getProperty(name: String, defaultValue: Long = -1L): Long {
     try {
         val clazz = Class.forName(SystemPropertiesClassName)
@@ -34,6 +37,7 @@ fun getProperty(name: String, defaultValue: Long = -1L): Long {
     return defaultValue
 }
 
+@SuppressLint("PrivateApi")
 fun getProperty(name: String, defaultValue: Boolean = false): Boolean {
     try {
         val clazz = Class.forName(SystemPropertiesClassName)
@@ -44,6 +48,7 @@ fun getProperty(name: String, defaultValue: Boolean = false): Boolean {
     return defaultValue
 }
 
+@SuppressLint("PrivateApi")
 fun setProperty(key: String, value: String) {
     try {
         val clazz = Class.forName(SystemPropertiesClassName)
