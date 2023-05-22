@@ -1,26 +1,26 @@
 package com.quibbler.androidtools.packages.settings
 
-import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.core.app.NotificationManagerCompat
+import com.quibbler.androidtools.packages.startActivitySafely
 
-public fun openAppDetails(context: Context) {
-    openInstalledAppDetails(context, context.packageName)
+public fun openThisAppDetails(context: Context) {
+    openInstalledAppDetailsByName(context, context.packageName)
 }
 
-public fun openInstalledAppDetails(context: Context, packageName: String) {
+public fun openInstalledAppDetailsByName(context: Context, packageName: String) {
     val intent: Intent = Intent()
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
     intent.data = Uri.fromParts("package", packageName, null)
-    context.startActivity(intent)
+    startActivitySafely(context, intent)
 }
 
-public fun openAppNotification(context: Context) {
+public fun openThisAppNotification(context: Context) {
     openAppNotification(context, context.packageName)
 }
 
@@ -35,7 +35,7 @@ public fun openAppNotification(context: Context, packageName: String) {
         intent.putExtra("app_package", packageName)
         //intent.putExtra("app_uid", context.applicationInfo.uid)
     }
-    context.startActivity(intent)
+    startActivitySafely(context, intent)
 }
 
 public fun isNotificationsEnabled(context: Context): Boolean {
