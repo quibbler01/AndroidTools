@@ -13,7 +13,7 @@ public class ResUtilTest {
         int id = ResourceUtilKt.getDrawableResIdByName("ic_launcher_background");
         Log.d(AndroidTools.TAG, "id1 " + id);
 
-        id = ResourceUtilKt.getResIdByName("ic_launcher_background", "drawable");
+        id = ResourceUtilKt.getResIdByName("ic_launcher_background", "drawable", context.getPackageName());
         Log.d(AndroidTools.TAG, "id2 " + id);
 
         id = ResourceUtilKt.getStringResIdByName("hello_world");
