@@ -5,9 +5,21 @@ import android.content.Context
 import java.lang.Exception
 
 /**
+ *
+ *  ______      _ _     _     _
+ * |  _  |     (_) |   | |   | |
+ * | | | |_   _ _| |__ | |__ | | ___ _ __
+ * | | | | | | | | '_ \| '_ \| |/ _ \ '__|
+ * \ \/' / |_| | | |_) | |_) | |  __/ |
+ *  \_/\_\\__,_|_|_.__/|_.__/|_|\___|_|
+ *
  * This tool library provides developers with various tools and methods commonly used in Android development.
  * Usually there is no need to initialize manually,
  * but developers can manually initialize the library through the [init] method and pass in an application Application
+ *
+ *     blog  : http://quibbler.cn
+ *     time  : 23/05/23
+ *     desc  : Utils for Android
  */
 object AndroidTools {
 
